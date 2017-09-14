@@ -1,3 +1,8 @@
 ext.versions = [
-        supportLib : '26.0.2'
+        compileSdk  : 26,
+        minSdk      : 21,
+        buildTools  : '26.0.1',
+        supportLib  : '26.0.2',
+        picasso     : '2.5.2',
+        retrofit    : '2.3.0'
 ]

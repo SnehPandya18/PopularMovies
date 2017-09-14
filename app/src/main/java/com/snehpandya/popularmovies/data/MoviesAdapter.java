@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.snehpandya.popularmovies.R;
-import com.snehpandya.popularmovies.model.Movies;
+import com.snehpandya.popularmovies.model.Result;
 
 import java.util.List;
 
@@ -17,9 +17,9 @@ import java.util.List;
 
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesViewHolder> {
 
-    private List<Movies> mMoviesList;
+    private List<Result> mMoviesList;
 
-    public MoviesAdapter(List<Movies> moviesList) {
+    public MoviesAdapter(List<Result> moviesList) {
         mMoviesList = moviesList;
     }
 
@@ -31,7 +31,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
 
     @Override
     public void onBindViewHolder(MoviesAdapter.MoviesViewHolder holder, int position) {
-        holder.mTextView.setText(mMoviesList.get(position).getMovie());
+        holder.mTextView.setText(mMoviesList.get(position).getPosterPath());
     }
 
     @Override
