@@ -1,5 +1,6 @@
 package com.snehpandya.popularmovies.data;
 
+import android.content.Intent;
 import android.databinding.BindingAdapter;
 import android.databinding.DataBindingUtil;
 import android.support.v7.widget.RecyclerView;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.snehpandya.popularmovies.R;
+import com.snehpandya.popularmovies.activity.DetailActivity;
 import com.snehpandya.popularmovies.databinding.ListItemBinding;
 import com.snehpandya.popularmovies.model.Result;
 import com.squareup.picasso.Picasso;
@@ -60,7 +62,12 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
         void setBinding(Result result) {
             mBinding.setResult(result);
             mBinding.executePendingBindings();
+            itemView.setOnClickListener(view -> {
+                int position = getAdapterPosition();
+                Intent intent = new Intent(view.getContext(), DetailActivity.class);
+                intent.putExtra("movie", mMoviesList.get(position));
+                view.getContext().startActivity(intent);
+            });
         }
     }
-
 }
