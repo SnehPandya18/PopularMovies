@@ -2,6 +2,9 @@ apply plugin: 'com.android.application'
 apply from: '../dependencies.gradle'
 
 android {
+    dataBinding {
+        enabled true
+    }
     compileSdkVersion versions.compileSdk
     buildToolsVersion versions.buildTools
     defaultConfig {
