@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.snehpandya.popularmovies.R;
 import com.snehpandya.popularmovies.databinding.ListItemBinding;
 import com.snehpandya.popularmovies.model.Result;
+import com.snehpandya.popularmovies.viewholder.MoviesViewHolder;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -18,7 +19,7 @@ import java.util.List;
  * Created by sneh.pandya on 14/09/17.
  */
 
-public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesViewHolder> {
+public class MoviesAdapter extends RecyclerView.Adapter<MoviesViewHolder> {
 
     private List<Result> mMoviesList;
 
@@ -34,13 +35,13 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
     }
 
     @Override
-    public MoviesAdapter.MoviesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public MoviesViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         ListItemBinding binding = DataBindingUtil.inflate(LayoutInflater.from(parent.getContext()), R.layout.list_item, parent, false);
         return new MoviesViewHolder(binding);
     }
 
     @Override
-    public void onBindViewHolder(MoviesAdapter.MoviesViewHolder holder, int position) {
+    public void onBindViewHolder(MoviesViewHolder holder, int position) {
         holder.setBinding(mMoviesList.get(position));
     }
 
@@ -48,19 +49,4 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.MoviesView
     public int getItemCount() {
         return mMoviesList.size();
     }
-
-    class MoviesViewHolder extends RecyclerView.ViewHolder {
-        ListItemBinding mBinding;
-
-        MoviesViewHolder(ListItemBinding binding) {
-            super(binding.getRoot());
-            this.mBinding = binding;
-        }
-
-        void setBinding(Result result) {
-            mBinding.setResult(result);
-            mBinding.executePendingBindings();
-        }
-    }
-
 }

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="result"
+            type="com.snehpandya.popularmovies.model.Result"/>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/imageview_detail"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:minHeight="200dp"
+                android:padding="8dp"
+                android:src="@{result.posterPath}"
+                tools:src="@mipmap/ic_launcher_foreground"/>
+
+            <TextView
+                android:id="@+id/text_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@{result.title}"
+                android:textAlignment="center"
+                tools:text="Title"/>
+
+            <TextView
+                android:id="@+id/text_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@{result.overview}"
+                android:textAlignment="center"
+                tools:text="Title"/>
+
+            <TextView
+                android:id="@+id/text_vote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@{result.voteAverage}"
+                android:textAlignment="center"
+                tools:text="Title"/>
+
+            <TextView
+                android:id="@+id/text_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@{result.releaseDate}"
+                android:textAlignment="center"
+                tools:text="Title"/>
+        </LinearLayout>
+    </ScrollView>
+</layout>
