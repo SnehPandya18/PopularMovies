@@ -37,7 +37,7 @@ public class ItemViewModel extends BaseObservable {
 
     public void getMovies(int page) {
         RetrofitService retrofitService = new RetrofitService();
-        Observable<Response> mResponse = retrofitService.mTMDBApi.getResponse("YOUR_API_KEY", page);
+        Observable<Response> mResponse = retrofitService.mTMDBApi.getResponse("20538a1ec60bfd1df41d9b08e00e26e8", page);
         mResponse.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::updateUI, this::handleError);
