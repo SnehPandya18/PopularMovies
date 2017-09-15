@@ -37,4 +37,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:' + versions.retrofit
     implementation 'io.reactivex.rxjava2:rxjava:' + versions.rxJava
     implementation 'io.reactivex.rxjava2:rxandroid:' + versions.rxAndroid
+    implementation 'android.arch.lifecycle:runtime:' + versions.archComp
+    implementation 'android.arch.lifecycle:extensions:' + versions.archComp
+    annotationProcessor 'android.arch.lifecycle:compiler:' + versions.archComp
 }
