@@ -2,7 +2,7 @@ package com.snehpandya.popularmovies.apiservice;
 
 import com.snehpandya.popularmovies.model.Response;
 
-import retrofit2.Call;
+import io.reactivex.Observable;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
@@ -13,5 +13,5 @@ import retrofit2.http.Query;
 public interface TMDBApi {
 
     @GET("3/movie/popular")
-    Call<Response> getResponse(@Query("api_key") String key, @Query("page") int page);
+    Observable<Response> getResponse(@Query("api_key") String key, @Query("page") int page);
 }
